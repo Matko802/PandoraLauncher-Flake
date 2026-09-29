@@ -16,7 +16,8 @@ appimageTools.wrapType2 {
     install -m 444 -D ${appimageContents}/usr/share/applications/PandoraLauncher-Linux-x86_64.desktop $out/share/applications/pandora-launcher.desktop
     substituteInPlace $out/share/applications/pandora-launcher.desktop \
       --replace 'Exec=PandoraLauncher-Linux-x86_64' 'Exec=pandora-launcher' \
-      --replace 'Icon=PandoraLauncher-Linux-x86_64' 'Icon=pandora-launcher'
+      --replace 'Icon=PandoraLauncher-Linux-x86_64' 'Icon=pandora-launcher' \
+      --replace 'Categories=' 'Categories=Game;'
     mkdir -p $out/share/icons
     cp -r ${appimageContents}/usr/share/icons/hicolor $out/share/icons/hicolor
     chmod -R u+w $out/share/icons
